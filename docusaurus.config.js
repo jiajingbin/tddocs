@@ -7,13 +7,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'TDengine 学习笔记',
   tagline: '开源、高效的物联网大数据平台',
-  url: 'https://dingbo8128.github.io/tddocs',
+  url: 'https://dingbo8128.github.io',
   baseUrl: '/tddocs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/docusaurus.ico',
   organizationName: 'dingbo8128', // Usually your GitHub org/user name.
-  projectName: 'tddos', // Usually your repo name.
+  projectName: 'tddocs', // Usually your repo name.
   deploymentBranch: "gh-pages",
 
   presets: [
@@ -24,13 +24,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/dingbo8128/tddocs/edit/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/dingbo8128/tddocs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -42,6 +42,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      hideableSidebar: true,
       navbar: {
         title: 'TDengine',
         logo: {
@@ -98,11 +99,12 @@ const config = {
             ],
           },
         ],
-        copyright: `Built with Docusaurus.`,
+        copyright: "dingbo8128",
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['powershell', 'rust', 'java', 'git', 'http'],
       },
     }),
 };

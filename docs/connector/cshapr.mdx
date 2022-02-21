@@ -1,0 +1,50 @@
+---
+sidebar_position: 7
+---
+
+# CS Connector
+
+## 安装
+
+在 Windows 系统上，C#应用程序可以使用 TDengine 的 C#连接器接口来执行所有数据库的操作。使用的具体步骤如下所示：
+
+需要 .NET SDK
+
+- 创建一个 c# project.
+
+```cmd
+mkdir test
+cd test
+dotnet new console
+```
+
+- 通过 Nuget 引用 TDengineDriver 包
+
+```cmd
+dotnet add package TDengine.Connector
+```
+
+- 在项目中需要用到 TDengineConnector 的地方引用 TDengineDriver namespace。
+
+```c#
+using TDengineDriver;
+```
+
+- 用户可以参考[TDengineTest.cs](https://github.com/taosdata/TDengine/tree/develop/examples/C%2523/TDengineTest)来定义数据库连接参数，以及如何执行数据插入、查询等操作。
+
+**注意：**
+
+- TDengine V2.0.3.0 之后同时支持 32 位和 64 位 Windows 系统，所以 C#项目在生成.exe 文件时，“解决方案”/“项目”的“平台”请选择对应的“X86” 或“x64”。
+- 此接口目前已经在 Visual Studio 2015/2017 中验证过，其它 VS 版本尚待验证。
+- 此连接器需要用到 taos.dll 文件，所以在未安装客户端时需要在执行应用程序前，拷贝 Windows{client_install_directory}/driver 目录中的 taos.dll 文件到项目最后生成.exe 可执行文件所在的文件夹。之后运行 exe 文件，即可访问 TDengine 数据库并做插入、查询等操作。
+
+## 第三方驱动
+
+Maikebing.Data.Taos 是一个 TDengine 的 ADO.Net 提供器，支持 linux，windows。该开发包由热心贡献者`麦壳饼@@maikebing`提供，具体请参考
+
+```
+//接口下载
+https://github.com/maikebing/Maikebing.EntityFrameworkCore.Taos
+//用法说明
+https://www.taosdata.com/blog/2020/11/02/1901.html
+```

@@ -1,0 +1,93 @@
+---
+sidebar_position: 4
+---
+
+# Go Connector
+
+### 安装准备
+
+Go 连接器支持的系统有：
+
+| **CPU 类型** | x64（64bit） |          |          | aarch64  | aarch32    |
+| ------------ | ------------ | -------- | -------- | -------- | ---------- |
+| **OS 类型**  | Linux        | Win64    | Win32    | Linux    | Linux      |
+| **支持与否** | **支持**     | **支持** | **支持** | **支持** | **开发中** |
+
+安装前准备：
+
+- 已安装好 TDengine 应用驱动，参考[安装连接器驱动步骤](https://www.taosdata.com/cn/documentation/connector#driver)。
+
+### 示例程序
+
+使用 Go 连接器的示例代码请参考 https://github.com/taosdata/TDengine/tree/develop/examples/go 以及[视频教程](https://www.taosdata.com/blog/2020/11/11/1951.html)。
+
+示例程序源码也位于安装目录下的 examples/go/taosdemo.go 文件中。
+
+**提示：建议 Go 版本是 1.13 及以上，并开启模块支持：**
+
+```sh
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.io,direct
+```
+
+在 taosdemo.go 所在目录下进行编译和执行：
+
+```sh
+go mod init taosdemo
+go get github.com/taosdata/driver-go/taosSql
+# use win branch in Windows platform.
+#go get github.com/taosdata/driver-go/taosSql@win
+go build
+./taosdemo -h fqdn -p serverPort
+```
+
+### Go 连接器的使用
+
+TDengine 提供了 GO 驱动程序包`taosSql`。`taosSql`实现了 GO 语言的内置接口`database/sql/driver`。用户只需按如下方式引入包就可以在应用程序中访问 TDengine。
+
+```go
+import (
+  "database/sql"
+  _ "github.com/taosdata/driver-go/v2/taosSql"
+)
+```
+
+**提示**：下划线与双引号之间必须有一个空格。
+
+`taosSql` 的 v2 版本进行了重构，分离出内置数据库操作接口 `database/sql/driver` 到目录 `taosSql`；订阅、stmt 等其他功能放到目录 `af`。
+
+### 常用 API
+
+- `sql.Open(DRIVER_NAME string, dataSourceName string) *DB`
+
+  该 API 用来打开 DB，返回一个类型为\*DB 的对象，一般情况下，DRIVER_NAME 设置为字符串`taosSql`，dataSourceName 设置为字符串`user:password@/tcp(host:port)/dbname`，如果客户想要用多个 goroutine 并发访问 TDengine, 那么需要在各个 goroutine 中分别创建一个 sql.Open 对象并用之访问 TDengine
+
+  **注意**： 该 API 成功创建的时候，并没有做权限等检查，只有在真正执行 Query 或者 Exec 的时候才能真正的去创建连接，并同时检查 user/password/host/port 是不是合法。另外，由于整个驱动程序大部分实现都下沉到 taosSql 所依赖的 libtaos 动态库中。所以，sql.Open 本身特别轻量。
+
+- `func (db *DB) Exec(query string, args ...interface{}) (Result, error)`
+
+sql.Open 内置的方法，用来执行非查询相关 SQL
+
+- `func (db *DB) Query(query string, args ...interface{}) (*Rows, error)`
+
+sql.Open 内置的方法，用来执行查询语句
+
+- `func (db *DB) Prepare(query string) (*Stmt, error)`
+
+  sql.Open 内置的方法，Prepare creates a prepared statement for later queries or executions.
+
+- `func (s *Stmt) Exec(args ...interface{}) (Result, error)`
+
+  sql.Open 内置的方法，executes a prepared statement with the given arguments and returns a Result summarizing the effect of the statement.
+
+- `func (s *Stmt) Query(args ...interface{}) (*Rows, error)`
+
+  sql.Open 内置的方法，Query executes a prepared query statement with the given arguments and returns the query results as a \*Rows.
+
+- `func (s *Stmt) Close() error`
+
+  sql.Open 内置的方法，Close closes the statement.
+
+### 其他代码示例
+
+[Consume Messages from Kafka](https://github.com/taosdata/go-demo-kafka) 是一个通过 Go 语言实现消费 Kafka 队列写入 TDengine 的示例程序，也可以作为通过 Go 连接 TDengine 的写法参考。
