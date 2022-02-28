@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dingbo8128.github.io/tddocs/blog</id>
-    <title>TDengine 学习笔记 Blog</title>
+    <title>TDengine 文档（预览） Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dingbo8128.github.io/tddocs/blog"/>
-    <subtitle>TDengine 学习笔记 Blog</subtitle>
-    <icon>https://dingbo8128.github.io/tddocs/img/docusaurus.ico</icon>
+    <subtitle>TDengine 文档（预览） Blog</subtitle>
+    <icon>https://dingbo8128.github.io/tddocs/img/tdengine.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
