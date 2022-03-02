@@ -1,10 +1,11 @@
 ---
-sidebar_position: 8
+sidebar_position: 2
+sidebar_label: 订阅
 ---
 
 # 高级功能
 
-## <a class="anchor" id="continuous-query"></a>连续查询（Continuous Query）
+## 连续查询（Continuous Query）
 
 连续查询是 TDengine 定期自动执行的查询，采用滑动窗口的方式进行计算，是一种简化的时间驱动的流式计算。针对库中的表或超级表，TDengine 可提供定期自动执行的连续查询，用户可让 TDengine 推送查询的结果，也可以将结果再写回到 TDengine 中。每次执行的查询是一个时间窗口，时间窗口随着时间流动向前滑动。在定义连续查询的时候需要指定时间窗口（time window, 参数 interval）大小和每次前向增量时间（forward sliding times, 参数 sliding）。
 
