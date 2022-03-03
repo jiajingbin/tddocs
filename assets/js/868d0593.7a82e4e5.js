@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktddocs=self.webpackChunktddocs||[]).push([[4881],{6623:function(e){e.exports=JSON.parse('{"permalink":"/tddocs/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
