@@ -6,18 +6,17 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0756c4fb;
-  --ifm-color-primary-dark: #3362b9;
-  --ifm-color-primary-darker: #17419b;
-  --ifm-color-primary-darkest: #06318d;
-  --ifm-color-primary-light: #285fb1;
-  --ifm-color-primary-lighter: #5a80c7e5;
-  --ifm-color-primary-lightest: #5281e6;
-  --ifm-code-font-size: 95%;
+  --ifm-color-primary: #2d7df0;
+  --ifm-color-primary-dark: #126dee;
+  --ifm-color-primary-darker: #1066e2;
+  --ifm-color-primary-darkest: #0d54ba;
+  --ifm-color-primary-light: #488df2;
+  --ifm-color-primary-lighter: #5596f3;
+  --ifm-color-primary-lightest: #7daef6;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -34,12 +33,11 @@ html[data-theme='dark'] {
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-
-[data-theme='light'] .DocSearch {
+[data-theme="light"] .DocSearch {
   /* --docsearch-primary-color: var(--ifm-color-primary); */
   /* --docsearch-text-color: var(--ifm-font-color-base); */
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
@@ -57,7 +55,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --docsearch-footer-background: var(--ifm-color-white);
 }
 
-[data-theme='dark'] .DocSearch {
+[data-theme="dark"] .DocSearch {
   --docsearch-text-color: var(--ifm-font-color-base);
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
   --docsearch-container-background: rgba(47, 55, 69, 0.7);
