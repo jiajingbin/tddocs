@@ -37,7 +37,6 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -50,88 +49,37 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro/intro",
+            type: "docsVersionDropdown",
             position: "left",
-            label: "文档",
+            dropdownActiveClassDisabled: true,
           },
-          // {to: '/blog', label: '博客', position: 'left'},
           {
             href: "https://github.com/taosdata/TDengine",
             label: "GitHub",
             position: "right",
           },
           {
-            type: "docsVersionDropdown",
-            position: "left",
-            dropdownActiveClassDisabled: true,
+            type: "doc",
+            docId: "getting-started/quick-install",
+            label: "快速上手",
+            position: "right",
           },
+          {
+            type: "doc",
+            docId: "intro/intro",
+            position: "right",
+            label: "文档",
+          },
+          { to: "/blog", label: "博客", position: "right" },
+          { to: "/blog", label: "媒体", position: "right" },
+          { to: "/blog", label: "技术支持", position: "right" },
+          { to: "/blog", label: "搜索", position: "right" },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: '文档',
-      //           to: '/docs',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Stack Overflow',
-      //           href: 'https://stackoverflow.com/questions/tagged/tdengine',
-      //         }
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: '博客',
-      //           to: '/blog',
-      //         },
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/taosdata/TDengine',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: "@2022 dingbo8128.github.io 页面内容仅供预览不保证正确性",
-      // },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ["powershell", "rust", "java", "git", "http"],
-      },
-      algolia: {
-        // The application ID provided by Algolia
-        appId: "YOUR_APP_ID",
-
-        // Public API key: it is safe to commit it
-        apiKey: "YOUR_SEARCH_API_KEY",
-
-        indexName: "YOUR_INDEX_NAME",
-
-        // Optional: see doc section below
-        contextualSearch: true,
-
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        externalUrlRegex: "external\\.com|domain\\.com",
-
-        // Optional: Algolia search parameters
-        searchParameters: {},
-
-        // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: "search",
-
-        //... other Algolia params
       },
     }),
 };
