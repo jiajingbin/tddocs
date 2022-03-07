@@ -55,11 +55,11 @@ const config = {
           src: "img/site-logo.png",
         },
         items: [
-          {
-            type: "docsVersionDropdown",
-            position: "left",
-            dropdownActiveClassDisabled: false,
-          },
+          // {
+          //   type: "docsVersionDropdown",
+          //   position: "left",
+          //   dropdownActiveClassDisabled: false,
+          // },
           {
             href: "https://github.com/taosdata/TDengine",
             label: "GitHub",
