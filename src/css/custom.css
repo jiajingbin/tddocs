@@ -17,6 +17,7 @@
   --ifm-navbar-link-color: white;
   --ifm-font-family-base: "Open Sans", Helvetica, "Hiragino Sans GB", sans-serif,
     "Apple Color Emoji";
+  --ifm-navbar-item-padding-horizontal: 10px;
 }
 
 .navbar {
@@ -54,9 +55,55 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  /* max-width: 1240px; */
+  /* style from official site */
+  /* margin-left: auto;
+  margin-right: auto;
+  max-width: 1240px; */
+}
+
+.navbar__item {
+  display: inline-block;
+  padding: var(--ifm-navbar-item-padding-vertical)
+    var(--ifm-navbar-item-padding-horizontal);
+}
+.navbar__link {
+  color: var(--ifm-navbar-link-color);
+  font-weight: 300;
+  font-size: 17.6px;
+  line-height: 60px;
+  letter-spacing: 0;
+}
+
+.navbar__link:hover {
+  color: white;
+  text-decoration: none;
+}
+.navbar__link--active {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+}
+
+.languageDropdown::before {
+  content: " ";
+  width: 32px;
+  padding-left: 20px;
+  background-image: url(/img/lang.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: inherit;
+}
+
+.dropdown > .languageDropdown::after {
+  border-width: 0;
+  border-style: hidden;
+  padding-right: 50px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */

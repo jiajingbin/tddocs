@@ -64,10 +64,14 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+          // {
+          //   to: "docs/getting-started/quick-install",
+          //   label: "快速上手",
+          //   position: "right",
+          // },
           {
-            type: "doc",
-            docId: "getting-started/quick-install",
-            label: "快速上手",
+            to: "https://www.taosdata.com/products",
+            label: "产品",
             position: "right",
           },
           {
@@ -76,10 +80,39 @@ const config = {
             position: "right",
             label: "文档",
           },
-          { to: "/blog", label: "博客", position: "right" },
-          { to: "/blog", label: "媒体", position: "right" },
-          { to: "/blog", label: "技术支持", position: "right" },
+          {
+            to: "https://www.taosdata.com/blog",
+            label: "博客",
+            position: "right",
+          },
+          {
+            to: "https://www.taosdata.com/media",
+            label: "媒体",
+            position: "right",
+          },
+          {
+            to: "https://www.taosdata.com/support",
+            label: "技术支持",
+            position: "right",
+          },
           { to: "/blog", label: "搜索", position: "right" },
+          {
+            type: "dropdown",
+            label: " ",
+            className: "languageDropdown",
+            position: "right",
+            items: [
+              {
+                label: "中文",
+                href: "https://www.facebook.com",
+              },
+              {
+                label: "English",
+                href: "https://tdengine.com/docs/en/v2.0/index",
+              },
+              // ... more items
+            ],
+          },
         ],
       },
       prism: {
