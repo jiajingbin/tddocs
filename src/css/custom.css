@@ -13,10 +13,54 @@
   --ifm-color-primary-light: #488df2;
   --ifm-color-primary-lighter: #5596f3;
   --ifm-color-primary-lightest: #7daef6;
+  --ifm-navbar-height: 100px;
+  --ifm-navbar-link-color: white;
+  --ifm-font-family-base: "Open Sans", Helvetica, "Hiragino Sans GB", sans-serif,
+    "Apple Color Emoji";
+}
+
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+  box-shadow: var(--ifm-navbar-shadow);
+  display: flex;
+  height: var(--ifm-navbar-height);
+  padding: var(--ifm-navbar-padding-vertical)
+    var(--ifm-navbar-padding-horizontal);
+}
+
+.navbar::before {
+  content: "";
+  background-image: url(/img/banner-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: inherit;
+}
+
+.navbar--fixed-top {
+  position: sticky;
+  top: 0;
+  z-index: var(--ifm-z-index-fixed);
+}
+
+.navbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* max-width: 1240px; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #84b3f5;
   --ifm-color-primary-dark: #619df2;
   --ifm-color-primary-darker: #5093f1;

@@ -47,10 +47,11 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: "TDengine",
+        hideOnScroll: true,
+        title: "",
         logo: {
           alt: "",
-          src: "img/logo.jpg",
+          src: "img/site-logo.png",
         },
         items: [
           {
