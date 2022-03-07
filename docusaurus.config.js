@@ -41,6 +41,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       hideableSidebar: true,
+      autoCollapseSidebarCategories: true,
       colorMode: {
         defaultMode: "light",
         disableSwitch: true,
@@ -57,7 +58,7 @@ const config = {
           {
             type: "docsVersionDropdown",
             position: "left",
-            dropdownActiveClassDisabled: true,
+            dropdownActiveClassDisabled: false,
           },
           {
             href: "https://github.com/taosdata/TDengine",
