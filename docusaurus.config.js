@@ -25,6 +25,11 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl: "https://github.com/dingbo8128/tddocs/edit/main/",
+          versions: {
+            "2.4": {
+              badge: false
+            }
+          }
         },
         blog: {
           showReadingTime: true,
