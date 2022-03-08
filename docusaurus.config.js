@@ -105,7 +105,7 @@ const config = {
             items: [
               {
                 label: "中文",
-                href: "https://www.facebook.com",
+                href: "https://www.taosdata.com/docs",
               },
               {
                 label: "English",
