@@ -110,7 +110,6 @@
   margin-top: 16px;
   height: 38px;
   border: 0px solid red;
-  flex-shrink: 1;
   padding-left: 0.5rem;
   padding-right: 0;
   margin-right: 16px;
@@ -122,11 +121,11 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   border-radius: 0.25rem;
-  height: 36px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 14px;
-  padding-right: 0;
+  height: 2.25rem;
+  padding-top: 0.31rem;
+  padding-bottom: 0.31rem;
+  padding-left: 0.87rem;
+  padding-right: 1.8rem;
   color: #595959;
   background-color: rgba(0, 0, 0, 0.05);
   border-color: #f0f0f0;
@@ -147,4 +146,9 @@
   top: 8px;
   right: 9px;
   pointer-events: none;
+}
+
+.sidebarTop {
+  display: flex;
+  flex-direction: row;
 }

@@ -19,7 +19,7 @@ import IconArrow from '@theme/IconArrow';
 import { translate } from '@docusaurus/Translate';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import styles from './styles.module.css';
-import DocsVersionDropdown from './DocsVersionDropdown';
+import SidebarTop from './SidebarTop';
 
 function useShowAnnouncementBar() {
   const { isActive } = useAnnouncementBar();
@@ -72,7 +72,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }) {
         [styles.sidebarHidden]: isHidden,
       })}>
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
-      <DocsVersionDropdown />
+      <SidebarTop />
       <nav
         className={clsx('menu thin-scrollbar', styles.menu, {
           [styles.menuWithAnnouncementBar]: showAnnouncementBar,
