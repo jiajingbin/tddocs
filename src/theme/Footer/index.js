@@ -51,10 +51,10 @@ const BottomLeft = () => (
 );
 
 const BottomRight = () => <div className={styles.bottomRight}>
-  <a className={styles.bottomLink} href="/careers">招贤纳士</a>
-  <a className={styles.bottomLink} href="/terms-of-service">服务条款</a>
-  <a className={styles.bottomLink} href="/privacy">隐私</a>
-  <a className={styles.bottomLinkLast} href="/about">关于</a>
+  <a className={styles.bottomLink} href="https://taosdata.com/careers">招贤纳士</a>
+  <a className={styles.bottomLink} href="https://taosdata.com/terms-of-service">服务条款</a>
+  <a className={styles.bottomLink} href="https://taosdata.com/privacy">隐私</a>
+  <a className={styles.bottomLinkLast} href="https://taosdata.com/about">关于</a>
 </div>;
 
 function Footer() {
