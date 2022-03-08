@@ -22,3 +22,8 @@
   }
 }
 
+.searchBarWrapper {
+  width: 175px;
+  height: 38px;
+  border: 1px solid red;
+}

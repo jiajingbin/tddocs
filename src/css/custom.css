@@ -18,7 +18,7 @@
   --ifm-font-family-base: "Open Sans", Helvetica, "Hiragino Sans GB", sans-serif,
     "Apple Color Emoji";
   --ifm-navbar-item-padding-horizontal: 10px;
-  --white: #fefefe
+  --white: #fefefe;
 }
 
 .navbar {
