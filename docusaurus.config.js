@@ -125,7 +125,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ["powershell", "rust", "java", "git", "http"],
-      },
+      }
     }),
 };
 
